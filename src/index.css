@@ -1,0 +1,47 @@
+@font-face {
+    font-family: Sansita Swashed;
+    src:         local("SansitaSwashed"), url("./assets/fonts/SansitaSwashed-Regular.ttf") format('truetype');
+    font-weight: normal;
+}
+
+* {
+    font-family: "Sansita Swashed";
+}
+
+input.form-control {
+    height: calc(1.5em + .75rem + 25px);
+}
+
+button.hover-status {
+    transition: all 0.5s ease-in-out !important;
+}
+
+button.hover-status i.not-hover {
+    display:    inline-block !important;
+    opacity:    1;
+    visibility: visible;
+}
+
+button.hover-status i.on-hover {
+    display:    none !important;
+    opacity:    0;
+    visibility: hidden;
+}
+
+
+button.hover-status:hover i.not-hover {
+    display:    none !important;
+    opacity:    0;
+    visibility: hidden;
+}
+
+button.hover-status:hover i.on-hover {
+    display:    inline-block !important;
+    opacity:    1;
+    visibility: visible;
+}
+
+button:disabled {
+    cursor:         not-allowed !important;
+    pointer-events: all !important;
+}
