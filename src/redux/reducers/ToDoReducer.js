@@ -54,6 +54,15 @@ const toDoReducer = (state = initialState, action) => {
         }
 
         case UPDATE_TASK: {
+            if (action.payload.trim() === '') {
+                alert('Task name is required!!!')
+                return {...state, taskEdit: {id: '-1', taskName: '', status: false}}
+            }
+            let isTaskExits = state.taskList.findIndex(item => item.taskName === action.payload)
+            if (isTaskExits !== -1) {
+                alert('Task name already exits!!')
+                return {...state, taskEdit: {id: '-1', taskName: '', status: false}}
+            }
             state.taskEdit = {...state.taskEdit, taskName: action.payload}
             let newTaskList = state.taskList
             let index = newTaskList.findIndex(item => item.id === state.taskEdit.id)
